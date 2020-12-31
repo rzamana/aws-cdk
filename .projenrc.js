@@ -1,11 +1,23 @@
 const { AwsCdkConstructLibrary } = require('projen');
 
+const PROJECT_NAME = 'sentia-solutions-constructs';
 const project = new AwsCdkConstructLibrary({
   author: 'Rafael Z. Kineippe',
-  authorAddress: 'rafael.zamana.kineippe@sentia.com',
+  authorAddress: 'rafael@zamana.com.br',
   cdkVersion: '1.73.0',
-  name: 'sentia-solutions-constructs',
-  repositoryUrl: 'https://github.com/rafael.zamana.kineippe/sentia-solutions-constructs.git',
+  name: PROJECT_NAME,
+  repositoryUrl: 'https://github.com/rzamana/sentia-solutions-constructs.git',
+
+  cdkDependencies: [
+    '@aws-cdk/core',
+    '@aws-cdk/aws-apigatewayv2',
+    '@aws-cdk/aws-apigatewayv2-integrations',
+    '@aws-cdk/aws-lambda',
+  ],
+  python: {
+    distName: PROJECT_NAME,
+    module: 'cdk_sample_lib',
+  },
 
   /* AwsCdkConstructLibraryOptions */
   // cdkAssert: true,                                                                          /* Install the @aws-cdk/assert library? */

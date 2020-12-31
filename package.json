@@ -2,7 +2,7 @@
   "name": "sentia-solutions-constructs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/rafael.zamana.kineippe/sentia-solutions-constructs.git"
+    "url": "https://github.com/rzamana/sentia-solutions-constructs.git"
   },
   "scripts": {
     "projen": "npx projen",
@@ -25,7 +25,7 @@
   },
   "author": {
     "name": "Rafael Z. Kineippe",
-    "email": "rafael.zamana.kineippe@sentia.com",
+    "email": "rafael@zamana.com.br",
     "organization": false
   },
   "devDependencies": {
@@ -52,7 +52,17 @@
     "typescript": "^3.9.5"
   },
   "peerDependencies": {
+    "@aws-cdk/aws-apigatewayv2": "^1.73.0",
+    "@aws-cdk/aws-apigatewayv2-integrations": "^1.73.0",
+    "@aws-cdk/aws-lambda": "^1.73.0",
+    "@aws-cdk/core": "^1.73.0",
     "constructs": "^3.2.27"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigatewayv2": "^1.73.0",
+    "@aws-cdk/aws-apigatewayv2-integrations": "^1.73.0",
+    "@aws-cdk/aws-lambda": "^1.73.0",
+    "@aws-cdk/core": "^1.73.0"
   },
   "bundledDependencies": [],
   "keywords": [
@@ -95,7 +105,12 @@
   "stability": "stable",
   "jsii": {
     "outdir": "dist",
-    "targets": {},
+    "targets": {
+      "python": {
+        "distName": "sentia-solutions-constructs",
+        "module": "cdk_sample_lib"
+      }
+    },
     "tsc": {
       "outDir": "lib",
       "rootDir": "src"
